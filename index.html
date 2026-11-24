@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Matchly helps you match your CV to jobs and track your applications." />
+    <title>matchly</title>
+    <link rel="icon" type="image/png" href="/assets/images/matchly-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <dialog class="quit-dialog" id="quit-dialog" aria-labelledby="quit-title">
+      <div class="quit-art">
+        <h2 id="quit-title">Are you sure want to quit?</h2>
+        <button type="button" class="quit-action quit-no" id="quit-no">NO</button>
+        <button type="button" class="quit-action quit-yes" id="quit-yes">YES</button>
+      </div>
+    </dialog>
+    <dialog class="add-job-dialog schedule-dialog" id="email-schedule-dialog" aria-labelledby="email-schedule-title">
+      <form id="email-schedule-form">
+        <h2 id="email-schedule-title">Pick date and time</h2>
+        <p>Choose when to send your email.</p>
+        <div class="schedule-fields">
+          <label for="email-schedule-date">Date<input id="email-schedule-date" name="date" type="date" required /></label>
+          <label for="email-schedule-time">Time<input id="email-schedule-time" name="time" type="time" required /></label>
+        </div>
+        <p class="schedule-error" role="alert" hidden></p>
+        <div class="add-job-actions">
+          <button class="button muted" type="button" data-close-email-schedule>Cancel</button>
+          <button class="button primary" type="submit">Schedule</button>
+        </div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
